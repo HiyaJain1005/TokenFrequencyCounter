@@ -1,16 +1,178 @@
-# React + Vite
+# Token Frequency Analyzer for Programming Code
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
 
-Currently, two official plugins are available:
+This project is a web-based tool that demonstrates the **Lexical Analysis phase of a compiler** by tokenizing source code and analyzing token frequency.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The system processes input code, converts it into a structured stream of tokens using a **custom Finite State Machine (FSM)-based tokenizer**, and provides interactive visualizations for better understanding.
 
-## React Compiler
+It supports **multiple programming languages**, making it flexible while maintaining a focused scope on lexical analysis.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Objectives
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Implement a **manual tokenizer** using FSM-based logic  
+- Classify tokens into:
+  - Keywords  
+  - Identifiers  
+  - Operators  
+  - Literals  
+  - Delimiters  
+- Analyze and display token frequency  
+- Visualize token flow and recognition  
+- Support **multi-language tokenization**
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend:** React, Tailwind CSS  
+- **Visualization:** Chart.js / Recharts  
+- **Core Logic:** JavaScript (Custom FSM-based tokenizer)
+
+---
+
+## 🌐 Supported Languages
+
+- C  
+- C++  
+- Python  
+- Java  
+
+> The tokenizer adapts keyword recognition based on the selected language while maintaining a unified lexical analysis pipeline.
+
+---
+
+## 🧠 Features
+
+### 1. Code Input
+- Users can enter or paste source code
+- Clean editor interface for structured input
+
+---
+
+### 2. Tokenization Engine
+- Custom-built lexical analyzer (no external libraries)
+- Processes code using deterministic FSM logic
+- Generates an ordered token stream
+
+---
+
+### 3. Token Stream View
+
+Displays tokens in sequence:
+
+```
+[int] [x] [=] [10] [;]
+```
+
+- Color-coded by token type  
+- Reflects real-time lexical scanning behavior  
+
+---
+
+### 4. Token Classification Table
+
+Displays:
+- Token  
+- Type  
+- Frequency  
+
+Interactive:
+- Selecting a token highlights all occurrences  
+
+---
+
+### 5. Frequency Analysis
+
+- Visual representation of token distribution  
+- Helps identify structural patterns in code  
+
+---
+
+### 6. Error Detection
+
+Detects:
+- Invalid tokens  
+- Unknown symbols  
+- Unterminated literals  
+
+Provides:
+- Error message  
+- Position reference  
+
+---
+
+### 7. Finite Automata Visualization
+
+- Demonstrates token recognition using simplified DFA models  
+- Covers:
+  - Identifiers  
+  - Numeric literals  
+
+---
+
+## 🧪 Example
+
+**Input:**
+```
+int x = 10;
+```
+
+**Output:**
+- Tokens: int, x, =, 10, ;  
+
+**Classification:**
+- int → Keyword  
+- x → Identifier  
+- = → Operator  
+- 10 → Literal  
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+  components/
+  utils/
+    tokenizer.js
+  styles/
+```
+
+---
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm start
+```
+
+---
+
+## 🧭 Future Improvements
+
+- File upload support  
+- Performance handling for large inputs  
+- More advanced DFA simulations  
+- Language-specific token rules expansion  
+
+---
+
+## 📚 Learning Outcome
+
+This project demonstrates practical understanding of:
+
+- Lexical Analysis  
+- Tokenization techniques  
+- Finite Automata (DFA)  
+- Compiler Design fundamentals  
+- Multi-language lexical processing  
+
+---
+
+## 👩‍💻 Author
+
+Hiya Jain and Nayana Dinesh
